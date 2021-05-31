@@ -5,8 +5,8 @@ const qs = require('qs');
 require('dotenv').config();
 
 const app = express();
-app.use( cors() );
-app.use( express.json() );
+app.use(cors());
+app.use(express.json());
 
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
