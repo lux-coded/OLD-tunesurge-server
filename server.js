@@ -5,19 +5,7 @@ const qs = require('qs');
 require('dotenv').config();
 
 const app = express();
-// app.use(cors());
-app.use(cors({
-  'origin': '*',
-  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  'preflightContinue': false
-}));
-app.use(express.json());
-
-const client_id = process.env.CLIENT_ID;
-const client_secret = process.env.CLIENT_SECRET;
-const redirect_uri = process.env.REDIRECT_URI;
-
-// Add headers
+app.use(cors());
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
@@ -37,6 +25,13 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
+app.use(express.json());
+
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
+const redirect_uri = process.env.REDIRECT_URI;
+
+
 
 app.post('/refresh', (req,res) => {
   const refreshToken = req.body.refreshToken;
