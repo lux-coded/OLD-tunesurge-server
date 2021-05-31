@@ -96,4 +96,6 @@ app.post('/login', (req, res) => {
   })
 });
 
-app.listen(5000);
+const PORT = process.env.PORT || 80;
+
+app.listen(PORT);
