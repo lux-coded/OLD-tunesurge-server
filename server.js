@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const qs = require('qs');
-require('dotenv').config()
+require('dotenv').config();
 
 const app = express();
 app.use( cors() );
@@ -10,6 +10,7 @@ app.use( express.json() );
 
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
+const redirect_uri = process.env.REDIRECT_URI;
 
 app.post('/refresh', (req,res) => {
   const refreshToken = req.body.refreshToken;
@@ -39,7 +40,6 @@ app.post('/refresh', (req,res) => {
   }).catch((err) => {
     res.sendStatus(400);
   })
-
 });
 
 app.post('/login', (req, res) => {
@@ -48,7 +48,7 @@ app.post('/login', (req, res) => {
   const accessData = {
     grant_type: 'authorization_code',
     code: authCode,
-    redirect_uri: 'http://localhost:3000/'
+    redirect_uri: redirect_uri
   };
 
   axios({
