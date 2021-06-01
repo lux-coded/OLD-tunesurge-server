@@ -96,6 +96,6 @@ app.post('/login', (req, res) => {
   })
 });
 
-const PORT = process.env.PORT || 443;
+const port = process.env.PORT || 443;
 
-app.listen(PORT);
+app.listen(port);
