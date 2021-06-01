@@ -13,9 +13,6 @@
     "qs": "^6.10.1",
     "spotify-web-api-node": "^5.0.2"
   },
-  "engines": {
-    "node": ">=10.0.0"
-  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/lux-coded/tunesurge-server/issues"
   },
-  "homepage": "https://github.com/lux-coded/tunesurge-server#readme"
+  "homepage": "https://github.com/lux-coded/tunesurge-server#readme",
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
